@@ -18,7 +18,7 @@ class SubSubject extends React.Component {
       <div>
         <h3> {this.state.subSubjectTitle}
          <input type="checkbox"/>
-      </h3>
+        </h3>
 
       </div>
     )

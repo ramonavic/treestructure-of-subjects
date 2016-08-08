@@ -15,10 +15,9 @@ class TopSubject extends React.Component {
     return (
 
       <div>
-        <h2> {this.state.topSubjectTitle}
-         <input type="checkbox"/>
-      </h2>
-
+          <h2> {this.state.topSubjectTitle}
+          <input type="checkbox"/>
+          </h2>
       </div>
     )
   }
