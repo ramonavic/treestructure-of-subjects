@@ -7,35 +7,38 @@ class Theme extends React.Component {
     super(props);
 
     this.state = {
-      topSubjectTitle: this.props.topSubjectTitle,
-      topSubjectID: this.props.topSubjectID,
-      subSubjectTitle: this.props.subSubjectTitle,
-      subSubjectID: this.props.subSubjectID,
+      topSubjects: this.props.topSubjects,
+      subSubjects: this.props.subSubjects
+    }
+}
 
-      themeSubjects: []
+  componentDidMount() {
+    let topSubjectsArray = this.state.topSubjects;
+    let subSubjectsArray = this.state.subSubjects;
 
+    console.log(topSubjectsArray.length)
+
+    for(var i = 0; i < topSubjectsArray.length; i++) {
+      for(var j = 0; j < subSubjectsArray.length; j++) {
+        if (subSubjectsArray.parent_subject_id[j] == topSubjectsArrays.id[i]) {
+          console.log("Addewareed", subSubjects.parent_subject.id[j])
+
+        }
+      }
+    }
   }
 
-
-
-
-
   render() {
-    let subjects = (this.state.subjects)
-    console.log(subjects)
+    let component = this
 
     return(
-
       <div>
-
+      
       </div>
     )
   }
 
 
 
-
 }
-
-
 export default Theme;

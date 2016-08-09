@@ -1,24 +1,23 @@
 import React from 'react';
 
 
-class SubSubject extends React.Component {
+class ThirdSubject extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      subSubjectTitle: this.props.title
+      thirdSubjectTitle: this.props.title
     }
   }
 
 
   render() {
-    console.log(this.state)
     return (
 
       <div>
-        <h3> {this.state.subSubjectTitle}
+        <h4> {this.state.thirdSubjectTitle}
          <input type="checkbox"/>
-        </h3>
+        </h4>
 
       </div>
     )
@@ -28,4 +27,4 @@ class SubSubject extends React.Component {
 
 }
 
-export default SubSubject
+export default ThirdSubject
