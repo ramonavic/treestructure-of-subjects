@@ -14,11 +14,8 @@ class TopSubject extends React.Component {
   render() {
     return (
 
-      <div>
-          <h2> {this.state.topSubjectTitle}
-          <input type="checkbox"/>
-          </h2>
-      </div>
+      <ListItem primaryText={this.state.topSubjectTitle}/>
+
     )
   }
 

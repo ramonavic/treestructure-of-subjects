@@ -13,13 +13,8 @@ class SecondSubject extends React.Component {
 
   render() {
     return (
+      <ListItem primaryText={this.state.secondSubjectTitle}/>
 
-      <div>
-        <h3> {this.state.secondSubjectTitle}
-         <input type="checkbox"/>
-        </h3>
-
-      </div>
     )
   }
 
