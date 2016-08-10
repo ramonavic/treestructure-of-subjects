@@ -1,15 +1,17 @@
 import React from 'react';
-import Counter from './Counter';
-import ScoreBoard from './ScoreBoard'
+import SubjectList from './containers/subjectList'
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 
 class App extends React.Component {
+
     render() {
         return (
-          <div>
-            <h1> Scores </h1>
-            <ScoreBoard />
-          </div>
+          <MuiThemeProvider >
+            <SubjectList/>
+          </MuiThemeProvider >
         );
     }
 }
