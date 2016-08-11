@@ -1,6 +1,6 @@
 import React from 'react'
 import Subject from '../lib/subject';
-import SecondSubjects from './secondSubjects'
+import SecondSubjectList from './secondSubjectList'
 
 class Theme extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Theme extends React.Component {
     }
   }
 
-  findChildren() {
+  findSubjectChildren() {
     let themeSubject = new Subject (this.state.themeSubjectID)
 
     let children = themeSubject.findChildren();
@@ -21,14 +21,20 @@ class Theme extends React.Component {
   }
 
   componentWillMount() {
-    this.findChildren();
+    this.findSubjectChildren();
   }
 
       render() {
+        let component = this;
       return (
         <ul>
           <h1> {this.state.themeSubject} </h1>
-          <SecondSubjects secondSubjects={this.state.children}  />
+          {this.state.children.map(function(child){
+            console.log(child)
+            return(
+            <SecondSubjectList key={component.state.themeSubjectID} secondSubjects={child}  />
+          )
+          })}
         </ul>
       )
     }
