@@ -1,25 +1,24 @@
 import React from 'react';
 
-
 class SecondSubject extends React.Component {
   constructor(props) {
-    super(props);
+    super()
 
-    this.state = {
-      secondSubjectTitle: this.props.title
+    this.state ={
+      id: props.id,
+      subject: props.subject
     }
+    console.log("State of Second Subject", this.state.subject)
   }
-
 
   render() {
     return (
-      <ListItem primaryText={this.state.secondSubjectTitle}/>
-
+      <li> <p> {this.state.subject} </p> </li>
     )
-  }
 
+  }
 
 
 }
 
-export default SecondSubject
+export default SecondSubject;
