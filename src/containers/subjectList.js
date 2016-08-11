@@ -49,15 +49,14 @@ class SubjectList extends React.Component {
     return (
       <div>
       <List>
-
           {this.state.topSubjects.map(function(topSubject, i){
             let children = topSubject.findChildren();
             console.log(topSubject.props.id)
             console.log(children)
             return(
               <div>
-                <Theme key={topSubject.props.id} topSubject={topSubject} />
-                <SubSubjects key={i} subSubject={children}/>
+                <Theme key={`theme${topSubject.props.id}`} topSubject={topSubject} />
+                <SubSubjects key={`list${topSubject.props.id}`} subSubject={children}/>
               </div>
             )
           }, this)

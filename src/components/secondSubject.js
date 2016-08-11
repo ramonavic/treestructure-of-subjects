@@ -7,7 +7,7 @@ class SecondSubject extends React.Component {
     super(props);
 
     this.state = {
-      secondSubjectTitle: this.props.primaryText,
+      subSubject: this.props.subSubject,
       key: this.props.key,
       nestedItems: this.props.nestedItems
     }
@@ -18,8 +18,12 @@ class SecondSubject extends React.Component {
   render() {
     return (
       <div>
-      <ListItem primaryText={this.state.secondSubjectTitle}/>
-      </div>
+      <SecondSubject
+        key={subSubject.props.id}
+        primaryText={subSubject.props.subject}
+      
+
+      />      </div>
     )
   }
 

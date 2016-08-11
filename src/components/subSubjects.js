@@ -10,18 +10,26 @@ class SubSubjects extends React.Component {
     this.state = {
       subSubjects: this.props.subSubject,
       open: true,
-      nestedItems: []
+      nestedItems: [],
+      checked: false
+
     }
   }
 
-  handleNestedListToggle(item) {
-    this.renderChildren();
-    let toggle = !this.state.open
-    console.log(item)
+  checkChildren() {
+    console.log("check children")
     this.setState({
-      open: toggle,
+      checked: !this.state.checked,
+      open: !this.state.checked,
+    })
+  }
+
+  handleNestedListToggle(item) {
+    item.open = !item.open
+    console.log("Toggling list")
+    this.setState({
+      open: !this.state.open,
     },console.log(this.state.open));
-    console.log(this.props.nestedItems)
   }
 
   renderSubjects() {
@@ -34,13 +42,14 @@ class SubSubjects extends React.Component {
         {this.state.subSubjects.map(function(subSubject){
           return (
           <ListItem
-            key={subSubject.props.id}
+            key={`sub-${subSubject.props.id}`}
             primaryText={subSubject.props.subject}
             nestedItems={component.state.nestedItems}
-            initiallyOpen={component.state.open}
-            onClick={component.handleNestedListToggle.bind(component)}
-            leftCheckbox={<Checkbox />}
-            primaryTogglesNestedList={true}
+            // initiallyOpen={component.state.open}
+            // open={component.state.open}
+            // onNestedListToggle={component.handleNestedListToggle}
+            // leftCheckbox={<Checkbox onCheck={component.checkChildren.bind(component)} />}
+            // primaryTogglesNestedList={true}
 
           />
         )
@@ -62,18 +71,20 @@ class SubSubjects extends React.Component {
         nestedItems.map(function(nestedItem){
             component.state.nestedItems.push(
               <ListItem
-                key={nestedItem.props.id}
+                key={`nest-${nestedItem.props.id}`}
                 primaryText={nestedItem.props.subject}
-                leftCheckbox={<Checkbox />}
+                // leftCheckbox={<Checkbox />}
               />)
 
           })
   })
 }
   componentWillMount() {
+    this.renderChildren();
   }
 
   render() {
+    console.log(this.state)
     return this.renderSubjects();
 
   }
