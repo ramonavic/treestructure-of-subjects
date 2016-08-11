@@ -1,44 +1,61 @@
 import React from 'react';
-import TopSubject from '../components/topSubject';
-import SubSubject from '../components/subSubject';
+import {List, ListItem} from 'material-ui/List';
+import Checkbox from 'material-ui/Checkbox';
+import Subheader from 'material-ui/Subheader';
+import SecondSubject from '../components/secondSubject'
+import Divider from 'material-ui/Divider';
+
 
 class Theme extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      topSubjects: this.props.topSubjects,
-      subSubjects: this.props.subSubjects
+
+      topSubject: this.props.topSubject,
+      secondSubjects: [],
+      nestedItems: []
     }
 }
 
-  componentDidMount() {
-    let topSubjectsArray = this.state.topSubjects;
-    let subSubjectsArray = this.state.subSubjects;
 
-    console.log(topSubjectsArray.length)
 
-    for(var i = 0; i < topSubjectsArray.length; i++) {
-      for(var j = 0; j < subSubjectsArray.length; j++) {
-        if (subSubjectsArray.parent_subject_id[j] == topSubjectsArrays.id[i]) {
-          console.log("Addewareed", subSubjects.parent_subject.id[j])
-
-        }
-      }
-    }
-  }
 
   render() {
-    let component = this
+    let component = this;
 
     return(
       <div>
-      
-      </div>
-    )
+        <Subheader key={component.state.topSubject.props.id}> {component.state.topSubject.props.subject} </Subheader>
+
+        <Divider/>
+        </div>
+      )
   }
+
 
 
 
 }
 export default Theme;
+
+
+
+// {component.state.secondSubjects.map(function(secondSubject){
+//   secondSubject.map(function(subj){
+//     console.log(component.state.nestedItems)
+//
+//     return(
+//       <div>
+//       <ListItem
+//         primaryText={subj.props.subject}
+//         key={subj.props.id}
+//         nestedItems={component.state.nestedItems}
+//         primaryTogglesNestedList={true}
+//         disabled={false}
+//         initiallyOpen={true}
+//         leftCheckbox={<Checkbox />}
+//       />
+//       </div>
+//     )
+//   })
+// })}

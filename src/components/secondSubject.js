@@ -1,4 +1,5 @@
 import React from 'react';
+import {List, ListItem} from 'material-ui/List';
 
 
 class SecondSubject extends React.Component {
@@ -6,17 +7,26 @@ class SecondSubject extends React.Component {
     super(props);
 
     this.state = {
-      secondSubjectTitle: this.props.title
+      subSubject: this.props.subSubject,
+      key: this.props.key,
+      nestedItems: this.props.nestedItems
     }
+    console.log(this.state)
   }
 
 
   render() {
     return (
-      <ListItem primaryText={this.state.secondSubjectTitle}/>
+      <div>
+      <SecondSubject
+        key={subSubject.props.id}
+        primaryText={subSubject.props.subject}
+      
 
+      />      </div>
     )
   }
+
 
 
 
