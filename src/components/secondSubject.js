@@ -29,7 +29,6 @@ class SecondSubject extends React.Component {
 
   render() {
     let component = this;
-    console.log("State of Second Subject", this.state)
     return (
       <li>
         <p> {this.state.subject} </p>
@@ -40,7 +39,6 @@ class SecondSubject extends React.Component {
               subjects={child}
             />
           )
-          console.log("Children of Second Subject", child)
 
         })}
       </li>

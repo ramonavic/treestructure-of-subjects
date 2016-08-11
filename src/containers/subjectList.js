@@ -1,5 +1,13 @@
 import React from 'react';
 import Theme from '../components/theme';
+import Search from '../lib/search';
+import Subject from '../lib/subject';
+
+let KEYS = ['subject', 'id']
+let KEY = 'subject'
+let ITEMS = Subject.all()
+console.log(ITEMS)
+
 
 class SubjectList extends React.Component {
   constructor(props) {
@@ -38,6 +46,8 @@ class SubjectList extends React.Component {
 
     return(
       <div>
+        <Search items={ITEMS} searchKey={KEY} keys={KEYS} placeholder={"Zoek een onderwerp"} />
+
         {this.state.topSubjects.map(function(topSubject){
             return (
               <Theme key={topSubject.props.id} id={topSubject.props.id} themeSubject={topSubject.props.subject} />

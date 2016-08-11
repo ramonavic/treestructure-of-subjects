@@ -30,7 +30,6 @@ class Theme extends React.Component {
         <ul>
           <h1> {this.state.themeSubject} </h1>
           {this.state.children.map(function(child){
-            console.log(child)
             return(
             <SecondSubjectList key={component.state.themeSubjectID} secondSubjects={child}  />
           )

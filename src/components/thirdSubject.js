@@ -6,7 +6,6 @@ class ThirdSubject extends React.Component {
     this.state = {
       subject: props.thirdSubject
     }
-    console.log("This is the ThirdSubject", this.state.subject)
   }
 
 
