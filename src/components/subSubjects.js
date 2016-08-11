@@ -45,11 +45,11 @@ class SubSubjects extends React.Component {
             key={`sub-${subSubject.props.id}`}
             primaryText={subSubject.props.subject}
             nestedItems={component.state.nestedItems}
-            // initiallyOpen={component.state.open}
-            // open={component.state.open}
-            // onNestedListToggle={component.handleNestedListToggle}
-            // leftCheckbox={<Checkbox onCheck={component.checkChildren.bind(component)} />}
-            // primaryTogglesNestedList={true}
+            initiallyOpen={true}
+            open={component.state.open}
+            onNestedListToggle={component.handleNestedListToggle}
+            leftCheckbox={<Checkbox onCheck={component.checkChildren.bind(component)} />}
+            primaryTogglesNestedList={true}
 
           />
         )
@@ -73,7 +73,7 @@ class SubSubjects extends React.Component {
               <ListItem
                 key={`nest-${nestedItem.props.id}`}
                 primaryText={nestedItem.props.subject}
-                // leftCheckbox={<Checkbox />}
+                leftCheckbox={<Checkbox />}
               />)
 
           })
