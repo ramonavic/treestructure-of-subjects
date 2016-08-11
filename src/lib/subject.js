@@ -8,8 +8,9 @@ class Subject {
   find(id) {
     var self = this;
     return data.filter(function(subj) {
-      parseInt(subj.id) === parseInt(id);
+      return parseInt(subj.id) === parseInt(id);
     })[0];
+
   }
 
   findParent() {
@@ -20,8 +21,9 @@ class Subject {
   }
 
   findChildren() {
+    var self = this
     var children = data.filter(function(subj) {
-      return subj.parent_subject_id === this.props.id;
+      return subj.parent_subject_id === self.props.id;
     });
 
     var self = this;
@@ -31,10 +33,10 @@ class Subject {
   }
 }
 
-Subject.all = function() {
-  return data.map(function(subj) {
-    return new Subject(subj.id);
-  });
-}
+  Subject.all = function() {
+    return data.map(function(subj) {
+      return new Subject(subj.id);
+    });
+  }
 
 export default Subject;
